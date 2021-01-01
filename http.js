@@ -3,22 +3,32 @@ const fs = require('fs')
 
 const server = http.createServer((req,res)=>{
 
-
     const url = req.url
     const method = req.method
     if(url === '/'){
         res.write('<html>');
         res.write('<head><title>Enter a message</title></head>')
-        res.write('<body> <form action="/message" method="POST"><input type="text" name="message" id=""/><button>Say Hello</button></form></body>')
+        res.write('<body><form action="/message" method="POST"><input type="text" name="message" id=""/><button>Say Hello</button></form></body>')
         res.write('</html>')
         return res.end()
     }
 
     if(url === '/message' && method === 'POST'){
-        fs.writeFileSync('message.txt', 'Dummy')
-        res.statusCode = 302;
-        res.writeHead('Location','/')
-        return res.end()
+        const body = []
+        req.on('data', (chunk)=>{
+            body.push(chunk)
+        })
+        req.on('end', ()=>{
+            const parsedBody = Buffer.concat(body).toString()
+            const message = parsedBody.split('=')[1]
+            fs.writeFile('message.txt', message, (err)=>{
+                if(err){
+                    res.statusCode = 302
+                    res.setHeader('Location','/')
+                    return res.end()
+                }
+            })
+        })
     }
 
     // process.exit()
