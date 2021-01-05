@@ -30,7 +30,6 @@ const server = http.createServer((req,res)=>{
             })
         })
     }
-
     // process.exit()
     res.setHeader('Content-type', 'text/html')
     res.write('<html><head><title>My first Page</title></head><body><h1>Hello from node js</h1></body></html>')
