@@ -3,14 +3,14 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        link(rel="stylesheet", href="/css/main.css")
+        title #{pageTitle}
+        block styles 
     body
         header.main-header
             nav.main-header__nav
                 ul.main-header__item-list
                     li.main-header__item
-                        a.active(href="/") shop
+                        a(href="/" class=(path === '/shop' ? 'active' : '')) shop
                     li.main-header__item
-                        a(href="admin/add-product") Add Product
-        h1 Page not Found
+                        a(href="/admin/add-product" class=(path === '/admin/add-product' ? 'active' : '')) Add Product
+        block content
