@@ -8,6 +8,7 @@ const User = require('./models/user')
 const mongoConnent = require('./util/database').mongoConnent
 const app = express();
 
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
