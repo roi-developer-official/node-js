@@ -26,7 +26,7 @@ app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(errorController.get404);
 
-mongoose.connect('mongodb+srv://me:RSJs9Zh8vPpjmpNo@cluster0.hj96h.mongodb.net/shop?retryWrites=true&w=majority',{ useUnifiedTopology: true,useNewUrlParser: true  } )
+mongoose.connect('',{ useUnifiedTopology: true,useNewUrlParser: true  } )
 .then(()=>{
   if(User.findOne().then(user=>{
     if(!user){

@@ -10,7 +10,7 @@ const mongodbStore = require('connect-mongodb-session')(session)
 const multer = require("multer")
 const errorController = require('./controllers/error');
 const User = require('./models/user');
-const mongodbUri = 'mongodb+srv://me:IkhBqFeM8SnOIjNo@cluster0.hj96h.mongodb.net/shop?retryWrites=true&w=majority'
+const mongodbUri = ''
 
 const app = express();
 const csrfProtection = csrf()

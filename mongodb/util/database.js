@@ -3,7 +3,7 @@ const MongoClient = mongodb.MongoClient
 
 let _db;
 const mongoConnent = (callback)=>{
-    MongoClient.connect(`mongodb+srv://me:t6vOEpGPrlEAqlqY@cluster0.hj96h.mongodb.net/shop?retryWrites=true&w=majority`, { useUnifiedTopology: true })
+    MongoClient.connect(``, { useUnifiedTopology: true })
     .then((client)=>{
         _db = client.db()
         callback(client)
