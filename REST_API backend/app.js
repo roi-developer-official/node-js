@@ -45,7 +45,7 @@ app.use((error,req,res,next)=>{
     res.status(status).json({mesasge: message})
 })
 
-mongoose.connect('mongodb+srv://me:etnVVOw1DRG6akJV@cluster0.hj96h.mongodb.net/posts?retryWrites=true&w=majority').then(()=>{
+mongoose.connect('').then(()=>{
     console.log('connented');
     app.listen(8080);
 })
