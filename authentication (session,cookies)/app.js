@@ -12,7 +12,7 @@ const errorController = require('./controllers/error');
 
 const User = require('./models/user');
 
-const mongodbUri = 'mongodb+srv://me:RSJs9Zh8vPpjmpNo@cluster0.hj96h.mongodb.net/shop?retryWrites=true&w=majority'
+const mongodbUri = ''
 
 const app = express();
 const csrfProtection = csrf()
